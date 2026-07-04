@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vastraa — Woven in Heritage, Worn in Grace</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/vastraa_logo.png">
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Discover premium handcrafted Indian sarees, Kurtas, and traditional ethnic wear at Vastraa. Backed by the legacy of authentic weaves and premium handlooms.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              burgundy: '#581123',
+              burgundyLight: '#721b32',
+              gold: '#d4b270',
+              goldDark: '#bfa061',
+              cream: '#faf6f0',
+              charcoal: '#2c2c2c',
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-brand-cream text-brand-charcoal min-h-screen flex flex-col">
+
+  <!-- Global Dynamic Header -->
+  <header id="global-header" class="w-full bg-white z-40"></header>
+
+  <!-- Main Content -->
+  <main class="flex-grow">
+    
+    <!-- Hero Banner Slider -->
+    <section class="relative bg-brand-charcoal overflow-hidden h-[400px] sm:h-[500px] lg:h-[600px] group">
+      <div id="hero-slider" class="relative w-full h-full">
+        
+        <!-- Slide 1 -->
+        <div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-1000 ease-in-out">
+          <img src="images/vastraa_red_silk.png" alt="Royal Crimson Banarasi Silk" class="w-full h-full object-cover object-center scale-100 transition-transform duration-[8000ms]">
+          <div class="absolute inset-0 bg-gradient-to-r from-brand-burgundy/60 via-transparent to-brand-charcoal/20"></div>
+          <div class="absolute inset-0 flex items-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+              <div class="max-w-lg text-white space-y-4">
+                <span class="text-xs uppercase tracking-[0.3em] text-brand-gold font-semibold block fade-in">The Banarasi Jaal Edit</span>
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight fade-in">Crimson Splendour</h1>
+                <p class="text-sm sm:text-base text-white/90 font-light max-w-sm fade-in">Indulge in royal handwoven silks adorned with genuine gold zari borders, crafted by heritage weavers.</p>
+                <div class="pt-4 fade-in">
+                  <a href="sarees.html?weave=Banarasi" class="inline-block bg-brand-gold hover:bg-brand-goldDark text-brand-burgundy text-xs uppercase tracking-widest font-bold py-3.5 px-8 border-b-2 border-brand-burgundy transition-all duration-300">
+                    Explore Collection
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+          <img src="images/vastraa_pastel_organza.png" alt="Pastel Organza Garden" class="w-full h-full object-cover object-center scale-100 transition-transform duration-[8000ms]">
+          <div class="absolute inset-0 bg-gradient-to-r from-brand-burgundy/50 via-transparent to-brand-charcoal/30"></div>
+          <div class="absolute inset-0 flex items-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+              <div class="max-w-lg text-white space-y-4">
+                <span class="text-xs uppercase tracking-[0.3em] text-brand-gold font-semibold block">Summer Solstice 2026</span>
+                <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">Breezy Pastels</h2>
+                <p class="text-sm sm:text-base text-white/90 font-light max-w-sm">Lightweight organzas and organic linens, painted with hand-floral motifs for casual elegance.</p>
+                <div class="pt-4">
+                  <a href="sarees.html?fabric=Organza" class="inline-block bg-brand-gold hover:bg-brand-goldDark text-brand-burgundy text-xs uppercase tracking-widest font-bold py-3.5 px-8 border-b-2 border-brand-burgundy transition-all duration-300">
+                    Discover Organza
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider Controls -->
+      <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white text-white hover:text-brand-burgundy p-2.5 transition duration-300 rounded-full border border-white/30 hidden group-hover:block" aria-label="Previous Slide">
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white text-white hover:text-brand-burgundy p-2.5 transition duration-300 rounded-full border border-white/30 hidden group-hover:block" aria-label="Next Slide">
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      <!-- Slideshow Dots -->
+      <div class="absolute bottom-6 left-0 right-0 flex justify-center space-x-2.5">
+        <button onclick="setSlide(0)" class="hero-dot w-2.5 h-2.5 bg-brand-gold rounded-full transition-all duration-300 border border-brand-gold" aria-label="Slide 1"></button>
+        <button onclick="setSlide(1)" class="hero-dot w-2.5 h-2.5 bg-white/50 rounded-full transition-all duration-300 border border-white" aria-label="Slide 2"></button>
+      </div>
+    </section>
+
+    <!-- Occasions Category Grid -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="text-center mb-12">
+        <span class="text-xs uppercase tracking-[0.25em] text-brand-gold font-bold mb-2.5 block">Shop By Collection</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-burgundy">Curated Occasions</h2>
+        <div class="h-0.5 w-16 bg-brand-gold mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Wedding Wear -->
+        <a href="sarees.html?weave=Kanjivaram" class="relative block h-96 group overflow-hidden border border-brand-gold/15 bg-brand-burgundy">
+          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=600&q=80" alt="Bridal Weaves" class="w-full h-full object-cover zoom-image opacity-90 group-hover:opacity-75">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-burgundy/90 via-brand-burgundy/15 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white space-y-1">
+            <h3 class="font-serif text-xl font-bold text-brand-gold">Wedding Grace</h3>
+            <p class="text-xs text-white/80 uppercase tracking-widest font-medium">Bridal Kanjivarams & Banarasis</p>
+          </div>
+        </a>
+
+        <!-- Festive Celebrations -->
+        <a href="sarees.html?fabric=Silk" class="relative block h-96 group overflow-hidden border border-brand-gold/15 bg-brand-burgundy">
+          <img src="https://images.unsplash.com/photo-1583391265517-35bbdad01209?auto=format&fit=crop&w=600&q=80" alt="Festive Sarees" class="w-full h-full object-cover zoom-image opacity-90 group-hover:opacity-75">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-burgundy/90 via-brand-burgundy/15 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white space-y-1">
+            <h3 class="font-serif text-xl font-bold text-brand-gold">Festive Glow</h3>
+            <p class="text-xs text-white/80 uppercase tracking-widest font-medium">Tussars, Chanderis & Georgettes</p>
+          </div>
+        </a>
+
+        <!-- Casual Elegance -->
+        <a href="sarees.html?fabric=Cotton" class="relative block h-96 group overflow-hidden border border-brand-gold/15 bg-brand-burgundy">
+          <img src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=600&q=80" alt="Casual Cottons" class="w-full h-full object-cover zoom-image opacity-90 group-hover:opacity-75">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-burgundy/90 via-brand-burgundy/15 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white space-y-1">
+            <h3 class="font-serif text-xl font-bold text-brand-gold">Casual Drapes</h3>
+            <p class="text-xs text-white/80 uppercase tracking-widest font-medium">Handloom Cottons & Mulmuls</p>
+          </div>
+        </a>
+
+        <!-- Kurta Sets -->
+        <a href="kurtas.html" class="relative block h-96 group overflow-hidden border border-brand-gold/15 bg-brand-burgundy">
+          <img src="https://images.unsplash.com/photo-1608748010899-18f300247112?auto=format&fit=crop&w=600&q=80" alt="Designer Salwars" class="w-full h-full object-cover zoom-image opacity-90 group-hover:opacity-75">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-burgundy/90 via-brand-burgundy/15 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white space-y-1">
+            <h3 class="font-serif text-xl font-bold text-brand-gold">Ready to Wear</h3>
+            <p class="text-xs text-white/80 uppercase tracking-widest font-medium">Designer Kurtas & Salwars</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- New Arrivals Product Carousel Section -->
+    <section class="bg-white border-t border-b border-brand-gold/10 py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10">
+          <div>
+            <span class="text-xs uppercase tracking-[0.25em] text-brand-gold font-bold mb-1.5 block">Newly Unveiled Weaves</span>
+            <h2 class="font-serif text-3xl font-bold text-brand-burgundy">New Arrivals</h2>
+          </div>
+          <a href="sarees.html" class="text-sm font-semibold text-brand-burgundy hover:text-brand-gold flex items-center mt-3 sm:mt-0 transition duration-200">
+            View All Products
+            <svg class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Product Cards Grid/Carousel Container -->
+        <div class="relative overflow-x-auto no-scrollbar pb-6 flex space-x-6" id="new-arrivals-carousel">
+          <!-- Populated Dynamically via products.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Heritage Weaving / Crafts block -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="relative h-[450px] sm:h-[550px] border border-brand-gold/20 p-3 bg-white">
+          <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80" alt="Weaving loom details" class="w-full h-full object-cover">
+          <div class="absolute bottom-8 right-8 bg-brand-burgundy text-white p-6 border-l-4 border-brand-gold max-w-[240px]">
+            <h4 class="font-serif text-lg font-bold text-brand-gold mb-1">Pure Mulberry Silk</h4>
+            <p class="text-xs text-white/80 leading-relaxed font-light">Every thread of silk in our collection is Silk Mark certified for purity.</p>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <span class="text-xs uppercase tracking-[0.25em] text-brand-gold font-bold block">100% Authentic Handlooms</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-burgundy leading-tight">Woven in Heritage, Crafting Legacies</h2>
+          <p class="text-sm text-brand-charcoal/80 leading-relaxed">
+            At Vastraa, we celebrate the master artisans of India. Our handloom collections represent months of hard work, ancestral weaving patterns, and authentic certification marks like the Silk Mark and Handloom Mark.
+          </p>
+          <div class="grid grid-cols-2 gap-6 pt-4">
+            <div class="flex items-start">
+              <span class="text-brand-gold text-lg mr-3">✦</span>
+              <div>
+                <h4 class="font-serif font-bold text-brand-burgundy mb-1">Banarasi Zari</h4>
+                <p class="text-xs text-gray-500">Fine hand-loomed brocades from the ghats of Varanasi.</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <span class="text-brand-gold text-lg mr-3">✦</span>
+              <div>
+                <h4 class="font-serif font-bold text-brand-burgundy mb-1">Kanjivaram Silk</h4>
+                <p class="text-xs text-gray-500">Double warp Mulberry silks handwoven in Tamil Nadu.</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <span class="text-brand-gold text-lg mr-3">✦</span>
+              <div>
+                <h4 class="font-serif font-bold text-brand-burgundy mb-1">Chanderi Weaves</h4>
+                <p class="text-xs text-gray-500">Sheer cotton-silks decorated with gold coin buttas.</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <span class="text-brand-gold text-lg mr-3">✦</span>
+              <div>
+                <h4 class="font-serif font-bold text-brand-burgundy mb-1">Jamdani Art</h4>
+                <p class="text-xs text-gray-500">Inlaid muslin floral motifs from weavers of Bengal.</p>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4">
+            <a href="sarees.html" class="inline-block bg-brand-burgundy hover:bg-brand-burgundyLight text-white text-xs uppercase tracking-widest font-bold py-3.5 px-8 border-b-2 border-brand-gold transition duration-300">
+              Read Our Saree Story
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Favourites Section -->
+    <section class="bg-white border-t border-b border-brand-gold/10 py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span class="text-xs uppercase tracking-[0.25em] text-brand-gold font-bold mb-2.5 block">Most Liked Drapes</span>
+          <h2 class="font-serif text-3xl font-bold text-brand-burgundy">Customer Favourites</h2>
+          <div class="h-0.5 w-16 bg-brand-gold mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="favorites-grid">
+          <!-- Populated Dynamically via products.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO / Info Accordion Block -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-brand-gold/10">
+      <div class="border border-brand-gold/20 bg-white">
+        
+        <!-- Accordion Header -->
+        <button onclick="toggleAccordion('seo-content')" class="w-full flex items-center justify-between p-6 text-left focus:outline-none">
+          <h3 class="font-serif text-lg font-bold text-brand-burgundy uppercase tracking-wider">Vastraa: Woven in Heritage, Worn in Grace</h3>
+          <span id="accordion-icon" class="text-brand-gold text-xl font-bold transition-transform duration-300">+</span>
+        </button>
+
+        <!-- Accordion Content -->
+        <div id="seo-content" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+          <div class="p-6 border-t border-brand-gold/10 text-xs sm:text-sm text-brand-charcoal/80 space-y-4 leading-relaxed bg-brand-cream/10">
+            <p>
+              Welcome to <strong>Vastraa</strong>, your premium destination for authentic Indian handloom sarees and designer ethnic wear. Backed by traditional weaving heritage and the fine art of Indian handlooms, we host an unmatched selection of silk, cotton, linen, organza, and tussar products.
+            </p>
+            <h4 class="font-serif font-bold text-brand-burgundy uppercase tracking-wider text-xs">Exquisite Saree Collections Online</h4>
+            <p>
+              Explore our heavy Kanjivaram and Banarasi wedding sarees, casual linen block prints, lightweight mulmul cottons, and tissue silk sarees. Every drape carries a certificate of authenticity (Silk Mark and Handloom Mark) to assure premium quality and raw purity.
+            </p>
+            <h4 class="font-serif font-bold text-brand-burgundy uppercase tracking-wider text-xs">Designer Kurtas & Suit Sets</h4>
+            <p>
+              Vastraa offers a premium range of ethnic wear for women. Browse hand-embroidered Anarkalis, cotton A-Line printed suits, pastel Chanderi straight kurtas, and indigo block-printed short kurtis. Perfect for office wear, casual daytime events, and festive dinner gatherings.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Dynamic Footer -->
+  <div id="global-footer"></div>
+
+  <!-- Javascript Modules -->
+  <script src="js/products.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  
+  <!-- Page specific slideshow and data-rendering script -->
+  <script>
+    // 1. Image Slider Logic
+    let currentSlideIndex = 0;
+    const slides = document.getElementsByClassName("hero-slide");
+    const dots = document.getElementsByClassName("hero-dot");
+
+    function showSlide(index) {
+      if (slides.length === 0) return;
+      if (index >= slides.length) currentSlideIndex = 0;
+      else if (index < 0) currentSlideIndex = slides.length - 1;
+      else currentSlideIndex = index;
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.add("opacity-0");
+        slides[i].classList.remove("opacity-100");
+        if (dots[i]) {
+          dots[i].classList.remove("bg-brand-gold");
+          dots[i].classList.add("bg-white/50");
+        }
+      }
+
+      slides[currentSlideIndex].classList.remove("opacity-0");
+      slides[currentSlideIndex].classList.add("opacity-100");
+      if (dots[currentSlideIndex]) {
+        dots[currentSlideIndex].classList.add("bg-brand-gold");
+        dots[currentSlideIndex].classList.remove("bg-white/50");
+      }
+    }
+
+    function nextSlide() {
+      showSlide(currentSlideIndex + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlideIndex - 1);
+    }
+
+    function setSlide(index) {
+      showSlide(index);
+    }
+
+    // Auto slideshow transition
+    setInterval(nextSlide, 7000);
+
+    // 2. SEO Accordion Toggler
+    function toggleAccordion(id) {
+      const content = document.getElementById(id);
+      const icon = document.getElementById("accordion-icon");
+      if (!content) return;
+
+      if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+        content.style.maxHeight = "0px";
+        icon.textContent = "+";
+        icon.style.transform = "rotate(0deg)";
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        icon.textContent = "-";
+        icon.style.transform = "rotate(180deg)";
+      }
+    }
+
+    // 3. Dynamically populate Product Collections
+    document.addEventListener("DOMContentLoaded", () => {
+      if (typeof ProductsDB !== "undefined") {
+        renderNewArrivals();
+        renderCustomerFavourites();
+      }
+    });
+
+    function renderNewArrivals() {
+      const carousel = document.getElementById("new-arrivals-carousel");
+      if (!carousel) return;
+      
+      const newArrivals = ProductsDB.getAll().slice(0, 6);
+      let html = "";
+      
+      newArrivals.forEach(product => {
+        html += createProductCardHTML(product);
+      });
+      
+      carousel.innerHTML = html;
+      document.dispatchEvent(new CustomEvent("wishlistButtonsSync"));
+    }
+
+    function renderCustomerFavourites() {
+      const grid = document.getElementById("favorites-grid");
+      if (!grid) return;
+      
+      const favourites = ProductsDB.getAll().slice(6, 10);
+      let html = "";
+      
+      favourites.forEach(product => {
+        html += createProductCardHTML(product);
+      });
+      
+      grid.innerHTML = html;
+      document.dispatchEvent(new CustomEvent("wishlistButtonsSync"));
+    }
+
+    // Product Card Template Generator
+    function createProductCardHTML(product) {
+      const discountPercentage = product.originalPrice > product.price 
+        ? `<span class="bg-green-700 text-white text-[9px] font-bold px-1.5 py-0.5 absolute top-2 left-2 z-10 uppercase tracking-widest">${product.discount}% OFF</span>` 
+        : "";
+
+      return `
+        <div class="flex-shrink-0 w-64 bg-white border border-brand-gold/10 group relative flex flex-col justify-between">
+          <div class="relative h-80 overflow-hidden bg-brand-cream/10">
+            ${discountPercentage}
+            
+            <!-- Wishlist Heart Button -->
+            <button data-wishlist-toggle="${product.id}" class="absolute top-2 right-2 z-10 p-1.5 bg-white/80 hover:bg-white text-brand-burgundy rounded-full shadow-sm hover:scale-105 transition" aria-label="Add to Wishlist">
+              <svg class="h-4.5 w-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </button>
+
+            <!-- Product Images -->
+            <a href="${product.category === 'sarees' ? 'sarees.html' : 'kurtas.html'}" class="block h-full w-full">
+              <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover zoom-image absolute inset-0">
+              <img src="${product.hoverImage}" alt="${product.name}" class="w-full h-full object-cover zoom-image absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            </a>
+
+            <!-- Quick View Hover button -->
+            <div class="absolute inset-x-0 bottom-4 flex justify-center product-action-btn">
+              <button data-quick-view="${product.id}" class="bg-white/95 hover:bg-brand-burgundy text-brand-burgundy hover:text-white text-xs uppercase tracking-widest font-bold py-2 px-5 border border-brand-gold/30 hover:border-brand-burgundy shadow-md transition duration-300">
+                Quick View
+              </button>
+            </div>
+          </div>
+
+          <!-- Description / Price Block -->
+          <div class="p-4 bg-white flex-grow flex flex-col justify-between">
+            <div>
+              <p class="text-[10px] text-brand-gold uppercase tracking-widest font-semibold mb-1">${product.fabric} | ${product.weave}</p>
+              <h3 class="font-serif text-sm font-semibold text-brand-charcoal line-clamp-2 hover:text-brand-burgundy transition-colors duration-200">
+                <a href="${product.category === 'sarees' ? 'sarees.html' : 'kurtas.html'}">${product.name}</a>
+              </h3>
+            </div>
+            
+            <div class="flex items-baseline space-x-2.5 pt-3 mt-auto border-t border-brand-gold/10">
+              <span class="text-sm font-bold text-brand-burgundy">₹ ${product.price.toLocaleString("en-IN")}</span>
+              ${product.originalPrice > product.price ? `
+                <span class="text-[11px] text-gray-400 line-through">₹ ${product.originalPrice.toLocaleString("en-IN")}</span>
+              ` : ""}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>

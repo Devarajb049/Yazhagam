@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Bag & Checkout — Vastraa</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/vastraa_logo.png">
+  <meta name="description" content="Review your shopping cart items, apply promo discount codes, and complete your purchase securely at Vastraa.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              burgundy: '#581123',
+              burgundyLight: '#721b32',
+              gold: '#d4b270',
+              goldDark: '#bfa061',
+              cream: '#faf6f0',
+              charcoal: '#2c2c2c',
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-brand-cream text-brand-charcoal min-h-screen flex flex-col">
+
+  <!-- Global Dynamic Header -->
+  <header id="global-header" class="w-full bg-white z-40"></header>
+
+  <!-- Title section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6 w-full">
+    <h1 class="font-serif text-3xl font-bold text-brand-burgundy">Shopping Bag & Checkout</h1>
+    <div class="h-0.5 w-16 bg-brand-gold mt-3"></div>
+  </section>
+
+  <!-- Main section -->
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+    
+    <!-- Empty Cart state -->
+    <div id="cart-empty-state" class="hidden flex flex-col items-center justify-center py-20 text-center text-gray-500 bg-white border border-brand-gold/10 max-w-xl mx-auto shadow-sm">
+      <div class="p-4 bg-brand-cream/40 border border-brand-gold/15 rounded-full mb-4">
+        <svg class="h-12 w-12 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+        </svg>
+      </div>
+      <h3 class="font-serif text-lg font-bold text-brand-burgundy mb-2">Your Shopping Bag is Empty</h3>
+      <p class="text-xs text-gray-400 max-w-[280px] mb-6">You haven't added any traditional Indian weaves to your bag yet.</p>
+      <a href="sarees.html" class="bg-brand-burgundy hover:bg-brand-burgundyLight text-white text-xs uppercase tracking-widest font-bold py-3.5 px-8 border-b-2 border-brand-gold transition duration-300">
+        Browse Our Collection
+      </a>
+    </div>
+
+    <!-- Active Cart contents layout (Two columns) -->
+    <div id="cart-main-layout" class="hidden flex flex-col lg:flex-row gap-8 items-start">
+      
+      <!-- Left Column: Cart Items List -->
+      <div class="w-full lg:flex-1 bg-white p-6 border border-brand-gold/15 shadow-sm space-y-6">
+        <h3 class="font-serif text-lg font-bold text-brand-burgundy border-b border-brand-gold/10 pb-3">Bag Items</h3>
+        <div id="cart-page-items-list" class="divide-y divide-brand-gold/10">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+
+      <!-- Right Column: Summary & Checkout Forms -->
+      <div class="w-full lg:w-[420px] space-y-6">
+        
+        <!-- Summary block -->
+        <div class="bg-white p-6 border border-brand-gold/15 shadow-sm">
+          <h3 class="font-serif text-lg font-bold text-brand-burgundy border-b border-brand-gold/10 pb-3 mb-4">Price details</h3>
+          <div class="space-y-3.5 text-sm">
+            <div class="flex justify-between">
+              <span class="text-gray-600">Subtotal:</span>
+              <span id="summary-subtotal" class="font-semibold">₹ 0</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Shipping Fee:</span>
+              <span id="summary-shipping" class="font-semibold text-green-700">FREE</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">GST / Taxes (Included):</span>
+              <span id="summary-tax" class="font-semibold text-gray-400">Included</span>
+            </div>
+            
+            <!-- Coupon Discount row -->
+            <div id="summary-discount-row" class="flex justify-between text-green-700 font-semibold hidden">
+              <span>Promo Discount (10%):</span>
+              <span id="summary-discount">- ₹ 0</span>
+            </div>
+
+            <!-- Coupon Code Field -->
+            <div class="pt-4 border-t border-brand-gold/10 mt-4">
+              <label for="coupon-input" class="block text-xs uppercase tracking-wider font-semibold text-brand-gold mb-2">Apply coupon code</label>
+              <div class="flex">
+                <input type="text" id="coupon-input" placeholder="e.g. VASTRAA10" class="bg-brand-cream/50 text-xs px-3 py-2 border border-brand-gold/25 focus:outline-none focus:border-brand-burgundy flex-1 uppercase">
+                <button onclick="applyCoupon()" class="bg-brand-burgundy hover:bg-brand-burgundyLight text-white text-xs font-bold px-4 transition duration-300">
+                  Apply
+                </button>
+              </div>
+              <p id="coupon-message" class="text-[10px] mt-1.5 font-semibold"></p>
+            </div>
+
+            <hr class="border-brand-gold/15 my-4">
+
+            <div class="flex justify-between text-base font-bold text-brand-burgundy pt-1">
+              <span>Order Total:</span>
+              <span id="summary-total">₹ 0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Checkout Details Form -->
+        <div class="bg-white p-6 border border-brand-gold/15 shadow-sm">
+          <h3 class="font-serif text-lg font-bold text-brand-burgundy border-b border-brand-gold/10 pb-3 mb-4">Delivery details</h3>
+          <form id="checkout-form" onsubmit="handlePlaceOrder(event)" class="space-y-4 text-xs">
+            
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label for="ship-first" class="block font-semibold mb-1">First Name *</label>
+                <input type="text" id="ship-first" required class="w-full bg-brand-cream/20 p-2.5 border border-brand-gold/20 focus:outline-none focus:border-brand-burgundy">
+              </div>
+              <div>
+                <label for="ship-last" class="block font-semibold mb-1">Last Name *</label>
+                <input type="text" id="ship-last" required class="w-full bg-brand-cream/20 p-2.5 border border-brand-gold/20 focus:outline-none focus:border-brand-burgundy">
+              </div>
+            </div>
+
+            <div>
+              <label for="ship-email" class="block font-semibold mb-1">Email Address *</label>
+              <input type="email" id="ship-email" required class="w-full bg-brand-cream/20 p-2.5 border border-brand-gold/20 focus:outline-none focus:border-brand-burgundy">
+            </div>
+
+            <div>
+              <label for="ship-phone" class="block font-semibold mb-1">Mobile Number *</label>
+              <input type="tel" id="ship-phone" required class="w-full bg-brand-cream/20 p-2.5 border border-brand-gold/20 focus:outline-none focus:border-brand-burgundy" placeholder="10-digit number">
+            </div>
+
+            <div>
+              <label for="ship-address" class="block font-semibold mb-1">Street Address *</label>
+              <textarea id="ship-address" required rows="2" class="w-full bg-brand-cream/20 p-2.5 border border-brand-gold/20 focus:outline-none focus:border-brand-burgundy"></textarea>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label for="ship-pin" class="block font-semibold mb-1">Pincode *</label>
+                <input type="text" id="ship-pin" required class="w-full bg-brand-cream/20 p-2.5 border border-brand-gold/20 focus:outline-none focus:border-brand-burgundy" placeholder="6-digit PIN">
+              </div>
+              <div>
+                <label for="ship-city" class="block font-semibold mb-1">City/State *</label>
+                <input type="text" id="ship-city" required class="w-full bg-brand-cream/20 p-2.5 border border-brand-gold/20 focus:outline-none focus:border-brand-burgundy">
+              </div>
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="pt-4 border-t border-brand-gold/10">
+              <label class="block font-bold text-brand-burgundy uppercase mb-2">Payment Method</label>
+              <div class="space-y-2">
+                <label class="flex items-center p-2.5 border border-brand-gold/10 bg-brand-cream/10 cursor-pointer">
+                  <input type="radio" name="payment" value="cod" checked class="custom-checkbox h-4 w-4 mr-2.5">
+                  <span>Cash on Delivery (COD)</span>
+                </label>
+                <label class="flex items-center p-2.5 border border-brand-gold/10 bg-brand-cream/10 cursor-pointer">
+                  <input type="radio" name="payment" value="card" class="custom-checkbox h-4 w-4 mr-2.5">
+                  <span>UPI / Credit Card / Debit Card (Simulated)</span>
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="w-full bg-brand-burgundy hover:bg-brand-burgundyLight text-white text-sm uppercase tracking-widest font-bold py-3.5 transition duration-300 border-b-2 border-brand-gold mt-4">
+              Place Order
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Global Dynamic Footer -->
+  <div id="global-footer"></div>
+
+  <!-- Order Success Modal Overlay -->
+  <div id="success-modal" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+      <div class="fixed inset-0 bg-brand-charcoal/60 transition-opacity duration-300"></div>
+
+      <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+      <div class="inline-block align-middle bg-white p-8 max-w-md w-full shadow-2xl border border-brand-gold/20 text-center space-y-6 transform transition-all">
+        <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 text-green-600">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <div class="space-y-2">
+          <h3 class="font-serif text-2xl font-bold text-brand-burgundy">Order Placed Successfully!</h3>
+          <p class="text-xs text-gray-500">Thank you for shopping at Vastraa. Your order has been placed and is currently being processed.</p>
+        </div>
+        
+        <!-- Order info summary details -->
+        <div class="bg-brand-cream/40 p-4 border border-brand-gold/15 text-left text-xs space-y-2">
+          <div class="flex justify-between">
+            <span class="text-gray-500">Order Reference:</span>
+            <span id="order-ref" class="font-bold text-brand-burgundy uppercase">#VAS-18239023</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-500">Delivery To:</span>
+            <span id="order-name" class="font-semibold text-brand-charcoal">Preeti Sharma</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-500">Paid Via:</span>
+            <span id="order-pay" class="font-semibold text-brand-charcoal uppercase">COD</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-500">Total Amount:</span>
+            <span id="order-amount" class="font-bold text-brand-burgundy">₹ 0</span>
+          </div>
+        </div>
+
+        <button onclick="closeSuccessModal()" class="w-full bg-brand-burgundy hover:bg-brand-burgundyLight text-white text-xs uppercase tracking-widest font-bold py-3 transition duration-300 border-b-2 border-brand-gold">
+          Continue Shopping
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Javascript Modules -->
+  <script src="js/products.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Checkout implementation scripts -->
+  <script>
+    let checkoutSubtotal = 0;
+    let couponDiscountRate = 0;
+    let discountAppliedVal = 0;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderCartPage();
+    });
+
+    // Render cart items listing and totals
+    function renderCartPage() {
+      const itemsList = document.getElementById("cart-page-items-list");
+      const emptyState = document.getElementById("cart-empty-state");
+      const layout = document.getElementById("cart-main-layout");
+      
+      if (!itemsList || !emptyState || !layout || typeof ProductsDB === "undefined") return;
+
+      const cartItems = typeof cart !== "undefined" ? cart : [];
+
+      if (cartItems.length === 0) {
+        layout.classList.add("hidden");
+        emptyState.classList.remove("hidden");
+        return;
+      }
+
+      emptyState.classList.add("hidden");
+      layout.classList.remove("hidden");
+
+      let html = "";
+      checkoutSubtotal = 0;
+
+      cartItems.forEach(item => {
+        const product = ProductsDB.getById(item.id);
+        if (!product) return;
+
+        const sub = product.price * item.quantity;
+        checkoutSubtotal += sub;
+
+        html += `
+          <div class="flex py-6 first:pt-0 last:pb-0">
+            <div class="h-28 w-20 flex-shrink-0 overflow-hidden border border-brand-gold/10">
+              <img src="${product.image}" alt="${product.name}" class="h-full w-full object-cover">
+            </div>
+            <div class="ml-6 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex justify-between text-sm font-semibold text-brand-charcoal">
+                  <h4 class="pr-4 hover:text-brand-burgundy transition-colors">${product.name}</h4>
+                  <p class="text-brand-burgundy">₹ ${(product.price * item.quantity).toLocaleString("en-IN")}</p>
+                </div>
+                <p class="text-xs text-gray-500 mt-1">${product.fabric} | ${product.weave} | Weave: ${product.weave}</p>
+              </div>
+              <div class="flex items-center justify-between text-xs pt-4">
+                <div class="flex items-center border border-brand-gold/30 bg-brand-cream/30 text-sm">
+                  <button onclick="updateCartQuantityPage('${product.id}', ${item.quantity - 1})" class="px-3 py-1 font-semibold text-brand-charcoal hover:bg-brand-gold/10">-</button>
+                  <span class="px-3 py-1 font-semibold text-brand-burgundy">${item.quantity}</span>
+                  <button onclick="updateCartQuantityPage('${product.id}', ${item.quantity + 1})" class="px-3 py-1 font-semibold text-brand-charcoal hover:bg-brand-gold/10">+</button>
+                </div>
+                
+                <button type="button" onclick="removeFromCartPage('${product.id}')" class="font-semibold text-brand-burgundy/80 hover:text-brand-burgundy flex items-center">
+                  <svg class="h-4.5 w-4.5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-4v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                  </svg>
+                  Remove item
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      itemsList.innerHTML = html;
+      calculateCheckoutTotals();
+    }
+
+    // Calculations logic
+    function calculateCheckoutTotals() {
+      const subtotalField = document.getElementById("summary-subtotal");
+      const shippingField = document.getElementById("summary-shipping");
+      const discountRow = document.getElementById("summary-discount-row");
+      const discountField = document.getElementById("summary-discount");
+      const totalField = document.getElementById("summary-total");
+
+      // Calculate shipping
+      const shippingFee = checkoutSubtotal >= 1999 ? 0 : 150;
+      
+      // Calculate discount
+      discountAppliedVal = checkoutSubtotal * couponDiscountRate;
+      
+      const grandTotal = checkoutSubtotal + shippingFee - discountAppliedVal;
+
+      if (subtotalField) subtotalField.textContent = `₹ ${checkoutSubtotal.toLocaleString("en-IN")}`;
+      
+      if (shippingField) {
+        shippingField.textContent = shippingFee === 0 ? "FREE" : `₹ ${shippingFee}`;
+        shippingField.className = shippingFee === 0 ? "font-semibold text-green-700" : "font-semibold text-brand-charcoal";
+      }
+
+      if (discountAppliedVal > 0) {
+        discountRow.classList.remove("hidden");
+        discountField.textContent = `- ₹ ${discountAppliedVal.toLocaleString("en-IN")}`;
+      } else {
+        discountRow.classList.add("hidden");
+      }
+
+      if (totalField) totalField.textContent = `₹ ${grandTotal.toLocaleString("en-IN")}`;
+    }
+
+    // Intermediary logic wrapping cart updates
+    function updateCartQuantityPage(id, qty) {
+      if (typeof updateCartQuantity === "function") {
+        updateCartQuantity(id, qty);
+        renderCartPage();
+      }
+    }
+
+    function removeFromCartPage(id) {
+      if (typeof removeFromCart === "function") {
+        removeFromCart(id);
+        renderCartPage();
+      }
+    }
+
+    // Apply coupon code logic
+    function applyCoupon() {
+      const input = document.getElementById("coupon-input").value.trim().toUpperCase();
+      const msg = document.getElementById("coupon-message");
+      
+      if (input === "VASTRAA10" || input === "TANEIRA10") {
+        couponDiscountRate = 0.10;
+        msg.textContent = "Coupon VASTRAA10 applied! 10% OFF discount granted.";
+        msg.className = "text-[10px] mt-1.5 font-semibold text-green-700";
+      } else {
+        couponDiscountRate = 0;
+        msg.textContent = "Invalid Coupon Code.";
+        msg.className = "text-[10px] mt-1.5 font-semibold text-red-600";
+      }
+      
+      calculateCheckoutTotals();
+    }
+
+    // Place Order handler
+    function handlePlaceOrder(event) {
+      event.preventDefault();
+      
+      // Extract form values
+      const firstName = document.getElementById("ship-first").value;
+      const lastName = document.getElementById("ship-last").value;
+      const payMethod = document.querySelector('input[name="payment"]:checked').value;
+      
+      // Calculate final total
+      const shippingFee = checkoutSubtotal >= 1999 ? 0 : 150;
+      const finalAmount = checkoutSubtotal + shippingFee - discountAppliedVal;
+
+      // Populate success modal info
+      document.getElementById("order-ref").textContent = `#VAS-${Math.floor(10000000 + Math.random() * 90000000)}`;
+      document.getElementById("order-name").textContent = `${firstName} ${lastName}`;
+      document.getElementById("order-pay").textContent = payMethod === "cod" ? "Cash on Delivery (COD)" : "Prepaid Online Card/UPI";
+      document.getElementById("order-amount").textContent = `₹ ${finalAmount.toLocaleString("en-IN")}`;
+
+      // Open Success modal
+      const modal = document.getElementById("success-modal");
+      if (modal) modal.classList.remove("hidden");
+    }
+
+    // Close success checkout, reset cart
+    function closeSuccessModal() {
+      // Clear cart array in JS memory and localStorage
+      if (typeof cart !== "undefined") {
+        cart = [];
+        localStorage.setItem("vastraa_cart", JSON.stringify(cart));
+      }
+      
+      // Update badging UI
+      if (typeof updateCartBadge === "function") {
+        updateCartBadge();
+      }
+
+      // Redirect to home
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
