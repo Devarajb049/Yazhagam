@@ -46,6 +46,11 @@ function updateCartBadge() {
   if (totalItems > 0) {
     badge.textContent = totalItems;
     badge.classList.remove("hidden");
+    // Scale animation feedback
+    badge.classList.add("scale-125", "transition-transform", "duration-200");
+    setTimeout(() => {
+      badge.classList.remove("scale-125", "transition-transform", "duration-200");
+    }, 200);
   } else {
     badge.classList.add("hidden");
   }
@@ -58,6 +63,11 @@ function updateWishlistBadge() {
   if (wishlist.length > 0) {
     badge.textContent = wishlist.length;
     badge.classList.remove("hidden");
+    // Scale animation feedback
+    badge.classList.add("scale-125", "transition-transform", "duration-200");
+    setTimeout(() => {
+      badge.classList.remove("scale-125", "transition-transform", "duration-200");
+    }, 200);
   } else {
     badge.classList.add("hidden");
   }
@@ -108,6 +118,14 @@ function toggleWishlist(productId) {
   }
   saveWishlist();
   showToast(added ? "Added to Wishlist!" : "Removed from Wishlist");
+  
+  // Bouncy heartbeat transition on heart click
+  document.querySelectorAll(`[data-wishlist-toggle="${productId}"]`).forEach(btn => {
+    btn.classList.add("animate-heartbeat");
+    setTimeout(() => {
+      btn.classList.remove("animate-heartbeat");
+    }, 350);
+  });
   
   // Custom event to update wishlist page if active
   document.dispatchEvent(new CustomEvent("wishlistUpdated"));
@@ -369,7 +387,7 @@ function showToast(message) {
   }
   
   const toast = document.createElement("div");
-  toast.className = "bg-brand-burgundy text-white border-l-4 border-brand-gold px-4 py-3 shadow-lg flex items-center justify-between space-x-4 animate-fade-in";
+  toast.className = "bg-brand-burgundy text-white border-l-4 border-brand-gold px-4 py-3 shadow-lg flex items-center justify-between space-x-4 animate-toast";
   toast.innerHTML = `
     <span class="text-xs tracking-wider uppercase font-semibold">${message}</span>
     <button onclick="this.parentElement.remove()" class="text-brand-gold hover:text-white focus:outline-none">

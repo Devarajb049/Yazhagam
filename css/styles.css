@@ -77,11 +77,36 @@ h6,
     opacity: 0;
     transform: translateY(10px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Slick toast slide-up & fade-in animation */
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-toast {
+  animation: slideUpFade 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Tactile Heartbeat button scale-up animation */
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.35); }
+  60% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+.animate-heartbeat {
+  animation: heartBeat 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 /* Sticky Header adjustment */
@@ -147,4 +172,14 @@ h6,
 /* Custom Checkbox */
 .custom-checkbox {
   accent-color: #581123;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.custom-checkbox:hover {
+  transform: scale(1.12);
+}
+
+.custom-checkbox:active {
+  transform: scale(0.9);
 }

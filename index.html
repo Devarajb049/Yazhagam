@@ -51,14 +51,14 @@
         
         <!-- Slide 1 -->
         <div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-1000 ease-in-out">
-          <img src="images/vastraa_red_silk.png" alt="Royal Crimson Banarasi Silk" class="w-full h-full object-cover object-center scale-100 transition-transform duration-[8000ms]">
+          <img src="images/vastraa_hero_yellow.png" alt="Royal Yellow Banarasi Silk" class="w-full h-full object-cover object-center scale-100 transition-transform duration-[8000ms]">
           <div class="absolute inset-0 bg-gradient-to-r from-brand-burgundy/60 via-transparent to-brand-charcoal/20"></div>
           <div class="absolute inset-0 flex items-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
               <div class="max-w-lg text-white space-y-4">
                 <span class="text-xs uppercase tracking-[0.3em] text-brand-gold font-semibold block fade-in">The Banarasi Jaal Edit</span>
-                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight fade-in">Crimson Splendour</h1>
-                <p class="text-sm sm:text-base text-white/90 font-light max-w-sm fade-in">Indulge in royal handwoven silks adorned with genuine gold zari borders, crafted by heritage weavers.</p>
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight fade-in">Golden Aura</h1>
+                <p class="text-sm sm:text-base text-white/90 font-light max-w-sm fade-in">Indulge in royal handwoven silks adorned with dual-tone shimmers and gold borders, hand-loomed by master artisans.</p>
                 <div class="pt-4 fade-in">
                   <a href="sarees.html?weave=Banarasi" class="inline-block bg-brand-gold hover:bg-brand-goldDark text-brand-burgundy text-xs uppercase tracking-widest font-bold py-3.5 px-8 border-b-2 border-brand-burgundy transition-all duration-300">
                     Explore Collection
@@ -71,17 +71,17 @@
 
         <!-- Slide 2 -->
         <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-          <img src="images/vastraa_pastel_organza.png" alt="Pastel Organza Garden" class="w-full h-full object-cover object-center scale-100 transition-transform duration-[8000ms]">
+          <img src="images/vastraa_hero_peach.png" alt="Pastel Peach Tissue Silk" class="w-full h-full object-cover object-center scale-100 transition-transform duration-[8000ms]">
           <div class="absolute inset-0 bg-gradient-to-r from-brand-burgundy/50 via-transparent to-brand-charcoal/30"></div>
           <div class="absolute inset-0 flex items-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
               <div class="max-w-lg text-white space-y-4">
                 <span class="text-xs uppercase tracking-[0.3em] text-brand-gold font-semibold block">Summer Solstice 2026</span>
-                <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">Breezy Pastels</h2>
-                <p class="text-sm sm:text-base text-white/90 font-light max-w-sm">Lightweight organzas and organic linens, painted with hand-floral motifs for casual elegance.</p>
+                <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">Shimmering Tissue</h2>
+                <p class="text-sm sm:text-base text-white/90 font-light max-w-sm">Celebrate elegance with soft peach tissue silk sarees, detailed with delicate scalloped borders.</p>
                 <div class="pt-4">
-                  <a href="sarees.html?fabric=Organza" class="inline-block bg-brand-gold hover:bg-brand-goldDark text-brand-burgundy text-xs uppercase tracking-widest font-bold py-3.5 px-8 border-b-2 border-brand-burgundy transition-all duration-300">
-                    Discover Organza
+                  <a href="sarees.html?fabric=Tissue" class="inline-block bg-brand-gold hover:bg-brand-goldDark text-brand-burgundy text-xs uppercase tracking-widest font-bold py-3.5 px-8 border-b-2 border-brand-burgundy transition-all duration-300">
+                    Discover Tissue Silk
                   </a>
                 </div>
               </div>
@@ -102,10 +102,18 @@
         </svg>
       </button>
 
-      <!-- Slideshow Dots -->
-      <div class="absolute bottom-6 left-0 right-0 flex justify-center space-x-2.5">
-        <button onclick="setSlide(0)" class="hero-dot w-2.5 h-2.5 bg-brand-gold rounded-full transition-all duration-300 border border-brand-gold" aria-label="Slide 1"></button>
-        <button onclick="setSlide(1)" class="hero-dot w-2.5 h-2.5 bg-white/50 rounded-full transition-all duration-300 border border-white" aria-label="Slide 2"></button>
+      <!-- Slideshow Dots (Heart SVGs) -->
+      <div class="absolute bottom-6 left-0 right-0 flex justify-center space-x-2.5 z-30">
+        <button onclick="setSlide(0)" class="hero-dot text-brand-gold transition-all duration-300 transform hover:scale-110 active:scale-95" aria-label="Slide 1">
+          <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </button>
+        <button onclick="setSlide(1)" class="hero-dot text-white/50 transition-all duration-300 transform hover:scale-110 active:scale-95" aria-label="Slide 2">
+          <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </button>
       </div>
     </section>
 
@@ -188,7 +196,107 @@
       </div>
     </section>
 
-    <!-- Heritage Weaving / Crafts block -->
+    <!-- Shop The Look Section (Matching screenshots) -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="text-center mb-10">
+        <h2 class="font-serif text-3xl font-bold text-brand-burgundy uppercase tracking-wider">Shop The Look</h2>
+        <div class="h-0.5 w-16 bg-brand-gold mx-auto mt-4"></div>
+      </div>
+      
+      <!-- Grid of 5 vertical cards -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        
+        <!-- Card 1 -->
+        <div class="relative group cursor-pointer overflow-hidden border border-brand-gold/15 shadow-sm rounded-lg" onclick="openQuickView('saree-06')">
+          <div class="aspect-[2/3] overflow-hidden bg-brand-cream/10 relative">
+            <img src="images/img-saree-banarasi.jpg" alt="Shop the Look 1" class="w-full h-full object-cover zoom-image">
+            <!-- Play mask overlay -->
+            <div class="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/25 transition duration-300">
+              <div class="bg-white/95 text-brand-burgundy p-3 rounded-full shadow-lg transform group-hover:scale-110 transition duration-300">
+                <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+            <!-- Small round thumbnail -->
+            <div class="absolute bottom-3 left-3 bg-white p-0.5 rounded-full border border-brand-gold/25 shadow">
+              <img src="images/img-saree-banarasi.jpg" alt="thumb" class="h-10 w-10 rounded-full object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="relative group cursor-pointer overflow-hidden border border-brand-gold/15 shadow-sm rounded-lg" onclick="openQuickView('saree-01')">
+          <div class="aspect-[2/3] overflow-hidden bg-brand-cream/10 relative">
+            <img src="images/img-saree-red.jpg" alt="Shop the Look 2" class="w-full h-full object-cover zoom-image">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/25 transition duration-300">
+              <div class="bg-white/95 text-brand-burgundy p-3 rounded-full shadow-lg transform group-hover:scale-110 transition duration-300">
+                <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="absolute bottom-3 left-3 bg-white p-0.5 rounded-full border border-brand-gold/25 shadow">
+              <img src="images/img-saree-red.jpg" alt="thumb" class="h-10 w-10 rounded-full object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="relative group cursor-pointer overflow-hidden border border-brand-gold/15 shadow-sm rounded-lg" onclick="openQuickView('saree-02')">
+          <div class="aspect-[2/3] overflow-hidden bg-brand-cream/10 relative">
+            <img src="images/img-saree-gold.jpg" alt="Shop the Look 3" class="w-full h-full object-cover zoom-image">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/25 transition duration-300">
+              <div class="bg-white/95 text-brand-burgundy p-3 rounded-full shadow-lg transform group-hover:scale-110 transition duration-300">
+                <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="absolute bottom-3 left-3 bg-white p-0.5 rounded-full border border-brand-gold/25 shadow">
+              <img src="images/img-saree-gold.jpg" alt="thumb" class="h-10 w-10 rounded-full object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="relative group cursor-pointer overflow-hidden border border-brand-gold/15 shadow-sm rounded-lg" onclick="openQuickView('saree-03')">
+          <div class="aspect-[2/3] overflow-hidden bg-brand-cream/10 relative">
+            <img src="images/img-saree-organza.jpg" alt="Shop the Look 4" class="w-full h-full object-cover zoom-image">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/25 transition duration-300">
+              <div class="bg-white/95 text-brand-burgundy p-3 rounded-full shadow-lg transform group-hover:scale-110 transition duration-300">
+                <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="absolute bottom-3 left-3 bg-white p-0.5 rounded-full border border-brand-gold/25 shadow">
+              <img src="images/img-saree-organza.jpg" alt="thumb" class="h-10 w-10 rounded-full object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="relative group cursor-pointer overflow-hidden border border-brand-gold/15 shadow-sm rounded-lg" onclick="openQuickView('saree-05')">
+          <div class="aspect-[2/3] overflow-hidden bg-brand-cream/10 relative">
+            <img src="images/img-saree-tussar.jpg" alt="Shop the Look 5" class="w-full h-full object-cover zoom-image">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/25 transition duration-300">
+              <div class="bg-white/95 text-brand-burgundy p-3 rounded-full shadow-lg transform group-hover:scale-110 transition duration-300">
+                <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="absolute bottom-3 left-3 bg-white p-0.5 rounded-full border border-brand-gold/25 shadow">
+              <img src="images/img-saree-tussar.jpg" alt="thumb" class="h-10 w-10 rounded-full object-cover">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Brand Story/Heritage Block -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="relative h-[450px] sm:h-[550px] border border-brand-gold/20 p-3 bg-white">
@@ -258,6 +366,74 @@
       </div>
     </section>
 
+    <!-- Testimonials Section (Matching Taneira screenshots) -->
+    <section class="bg-brand-cream/20 py-16 border-t border-b border-brand-gold/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+        
+        <!-- Large Quotation Icon -->
+        <div class="text-[#581123]/25 font-serif text-8xl leading-[0.1] select-none mb-4">“</div>
+        <span class="text-xs uppercase tracking-[0.25em] text-brand-gold font-bold mb-2 block">TESTIMONIAL</span>
+        <h2 class="font-serif text-3xl font-bold text-brand-charcoal mb-8">Speaking from their hearts</h2>
+        
+        <!-- Grid layout for reviews -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-10">
+          
+          <!-- Testimonial 1 -->
+          <div class="bg-white border border-brand-gold/10 p-6 shadow-sm flex flex-col justify-between rounded-lg">
+            <div class="space-y-3">
+              <div class="flex items-center text-brand-gold space-x-0.5">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="text-xs text-brand-charcoal/80 italic leading-relaxed">
+                "Surbhi and Sneha (customer care representatives) helped me a lot to get that particular saree. Really appreciate their excellent work and support!"
+              </p>
+            </div>
+            <div class="flex justify-between items-center pt-4 border-t border-gray-100 mt-4 text-[10px] text-gray-500 font-semibold">
+              <span>Ankita</span>
+              <span>12/09/25</span>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-white border border-brand-gold/10 p-6 shadow-sm flex flex-col justify-between rounded-lg">
+            <div class="space-y-3">
+              <div class="flex items-center text-brand-gold space-x-0.5">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="text-xs text-brand-charcoal/80 italic leading-relaxed">
+                "A TATA/Vastraa product! The name says it all. Par excellence as always. The quality of cotton and authentic weaves are incomparable."
+              </p>
+            </div>
+            <div class="flex justify-between items-center pt-4 border-t border-gray-100 mt-4 text-[10px] text-gray-500 font-semibold">
+              <span>Asha K.</span>
+              <span>26/06/26</span>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="bg-white border border-brand-gold/10 p-6 shadow-sm flex flex-col justify-between rounded-lg">
+            <div class="space-y-3">
+              <div class="flex items-center text-brand-gold space-x-0.5">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="text-xs text-brand-charcoal/80 italic leading-relaxed">
+                "Excellent collection, conveniently arranged by crafts and weaves. Weavers did an amazing job. The delivery was fast and packing was solid."
+              </p>
+            </div>
+            <div class="flex justify-between items-center pt-4 border-t border-gray-100 mt-4 text-[10px] text-gray-500 font-semibold">
+              <span>Madras S.</span>
+              <span>02/05/25</span>
+            </div>
+          </div>
+
+        </div>
+
+        <a href="#" class="inline-block bg-brand-burgundy hover:bg-brand-burgundyLight text-white text-xs uppercase tracking-widest font-bold py-3.5 px-8 rounded-full border-b border-brand-gold transition duration-300">
+          View All Reviews
+        </a>
+      </div>
+    </section>
+
     <!-- SEO / Info Accordion Block -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-brand-gold/10">
       <div class="border border-brand-gold/20 bg-white">
@@ -315,16 +491,16 @@
         slides[i].classList.add("opacity-0");
         slides[i].classList.remove("opacity-100");
         if (dots[i]) {
-          dots[i].classList.remove("bg-brand-gold");
-          dots[i].classList.add("bg-white/50");
+          dots[i].classList.remove("text-brand-gold");
+          dots[i].classList.add("text-white/50");
         }
       }
 
       slides[currentSlideIndex].classList.remove("opacity-0");
       slides[currentSlideIndex].classList.add("opacity-100");
       if (dots[currentSlideIndex]) {
-        dots[currentSlideIndex].classList.add("bg-brand-gold");
-        dots[currentSlideIndex].classList.remove("bg-white/50");
+        dots[currentSlideIndex].classList.add("text-brand-gold");
+        dots[currentSlideIndex].classList.remove("text-white/50");
       }
     }
 
@@ -411,7 +587,7 @@
             
             <!-- Wishlist Heart Button -->
             <button data-wishlist-toggle="${product.id}" class="absolute top-2 right-2 z-10 p-1.5 bg-white/80 hover:bg-white text-brand-burgundy rounded-full shadow-sm hover:scale-105 transition" aria-label="Add to Wishlist">
-              <svg class="h-4.5 w-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
             </button>
