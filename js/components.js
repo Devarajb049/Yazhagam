@@ -1,4 +1,4 @@
-// Reusable Components Injector for Vastraa Website
+// Reusable Components Injector for Yazhagam Website
 
 document.addEventListener("DOMContentLoaded", () => {
   injectHeader();
@@ -17,7 +17,7 @@ function injectHeader() {
     <div class="bg-brand-burgundy text-white text-[11px] py-2 px-4 overflow-hidden border-b border-brand-gold/20">
       <div class="ticker-wrap max-w-7xl mx-auto flex justify-between items-center text-center">
         <div class="ticker-content w-full flex justify-around space-x-8">
-          <span>✨ Flat 10% OFF on your first order. Use code: <strong class="text-brand-gold">VASTRAA10</strong></span>
+          <span>✨ Flat 10% OFF on your first order. Use code: <strong class="text-brand-gold">YAZHAGAM10</strong></span>
           <span class="hidden md:inline">|</span>
           <span>🚚 Free shipping across India on orders above ₹1,999</span>
           <span class="hidden md:inline">|</span>
@@ -43,7 +43,7 @@ function injectHeader() {
           <!-- Brand Logo -->
           <div class="flex-shrink-0 flex items-center">
             <a href="index.html" class="flex items-center">
-              <img src="images/vastraa_logo.png" alt="Vastraa Logo" class="h-16 w-auto hover:opacity-90 transition duration-300">
+              <img src="images/yazhagam_logo.png" alt="Yazhagam Logo" class="h-16 w-auto hover:opacity-90 transition duration-300">
             </a>
           </div>
 
@@ -369,7 +369,7 @@ function injectHeader() {
               <a href="sarees.html?weave=Kanjivaram" class="text-[10px] uppercase tracking-[0.2em] font-semibold text-brand-charcoal hover:text-brand-burgundy hover:border-b-2 hover:border-brand-burgundy transition-all duration-200 pb-1">Gifting</a>
               <div class="absolute left-0 mt-3 w-48 bg-white border border-gray-100 shadow-2xl p-4 hidden group-hover:block z-50 rounded-lg text-left animate-toast">
                 <ul class="space-y-3 text-[11px] font-semibold text-brand-charcoal/80">
-                  <li><a href="sarees.html?weave=Kanjivaram" class="hover:text-brand-burgundy block transition">Vastraa E-Gift Card</a></li>
+                  <li><a href="sarees.html?weave=Kanjivaram" class="hover:text-brand-burgundy block transition">Yazhagam E-Gift Card</a></li>
                   <li><a href="sarees.html?weave=Kanjivaram" class="hover:text-brand-burgundy block transition">Gifting For Women</a></li>
                 </ul>
               </div>
@@ -406,7 +406,7 @@ function injectHeader() {
                   <li><a href="#" class="hover:text-brand-burgundy block transition">Golden Cocoon</a></li>
                   <li><a href="#" class="hover:text-brand-burgundy block transition">Delivery Information</a></li>
                   <li><a href="#" class="hover:text-brand-burgundy block transition">Return & Cancellations</a></li>
-                  <li><a href="#" class="hover:text-brand-burgundy block transition">Encircle & Vastraa NeuPass</a></li>
+                  <li><a href="#" class="hover:text-brand-burgundy block transition">Encircle & Yazhagam NeuPass</a></li>
                 </ul>
               </div>
             </div>
@@ -486,9 +486,9 @@ function injectFooter() {
             </ul>
           </div>
 
-          <!-- Column 3: About Vastraa -->
+          <!-- Column 3: About Yazhagam -->
           <div>
-            <h4 class="font-serif text-[13px] font-bold text-brand-burgundy uppercase tracking-wider mb-6">About Vastraa</h4>
+            <h4 class="font-serif text-[13px] font-bold text-brand-burgundy uppercase tracking-wider mb-6">About Yazhagam</h4>
             <ul class="space-y-3.5 text-xs font-semibold text-brand-charcoal/80">
               <li><a href="#" class="hover:text-brand-burgundy transition">About Us</a></li>
               <li><a href="#" class="hover:text-brand-burgundy transition">Track Order</a></li>
@@ -505,7 +505,7 @@ function injectFooter() {
             <h4 class="font-serif text-[13px] font-bold text-brand-burgundy uppercase tracking-wider mb-6">Contact Us</h4>
             <ul class="space-y-3.5 text-xs font-semibold text-brand-charcoal/80 mb-6">
               <li>1800-266-0123</li>
-              <li><a href="mailto:customercare@vastraa.co.in" class="hover:text-brand-burgundy transition">customercare@vastraa.co.in</a></li>
+              <li><a href="mailto:customercare@yazhagam.co.in" class="hover:text-brand-burgundy transition">customercare@yazhagam.co.in</a></li>
               <li><a href="#" class="hover:text-brand-burgundy transition font-bold">Store Locator</a></li>
             </ul>
             
@@ -529,7 +529,7 @@ function injectFooter() {
 
         <!-- Copyright & Payment Logo icons (Matching bottom row of Taneira screenshot) -->
         <div class="pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-semibold text-brand-charcoal/60 mt-6 border-t border-brand-gold/15">
-          <p>© 2026 Vastraa E-commerce. All Rights Reserved. back by Titan Company Limited.</p>
+          <p>© 2026 Yazhagam E-commerce. All Rights Reserved. back by Titan Company Limited.</p>
           <div class="flex items-center space-x-4 mt-4 md:mt-0">
             <!-- Payment Icons -->
             <span class="text-[10px] text-gray-400">Secure Payments:</span>

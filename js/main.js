@@ -1,4 +1,4 @@
-// Vastraa E-Commerce Global State & Interactivity Handler
+// Yazhagam E-Commerce Global State & Interactivity Handler
 
 // Initialize State
 let cart = [];
@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
 // Load state from localStorage
 function loadState() {
   try {
-    const savedCart = localStorage.getItem("vastraa_cart");
-    const savedWishlist = localStorage.getItem("vastraa_wishlist");
+    const savedCart = localStorage.getItem("yazhagam_cart");
+    const savedWishlist = localStorage.getItem("yazhagam_wishlist");
     
     if (savedCart) cart = JSON.parse(savedCart);
     if (savedWishlist) wishlist = JSON.parse(savedWishlist);
@@ -26,13 +26,13 @@ function loadState() {
 
 // Save state to localStorage
 function saveCart() {
-  localStorage.setItem("vastraa_cart", JSON.stringify(cart));
+  localStorage.setItem("yazhagam_cart", JSON.stringify(cart));
   updateCartBadge();
   updateCartUI();
 }
 
 function saveWishlist() {
-  localStorage.setItem("vastraa_wishlist", JSON.stringify(wishlist));
+  localStorage.setItem("yazhagam_wishlist", JSON.stringify(wishlist));
   updateWishlistBadge();
   updateWishlistButtonsState();
 }

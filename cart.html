@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shopping Bag & Checkout — Vastraa</title>
+  <title>Shopping Bag & Checkout — Yazhagam</title>
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/vastraa_logo.png">
-  <meta name="description" content="Review your shopping cart items, apply promo discount codes, and complete your purchase securely at Vastraa.">
+  <link rel="icon" type="image/png" href="images/yazhagam_logo.png">
+  <meta name="description" content="Review your shopping cart items, apply promo discount codes, and complete your purchase securely at Yazhagam.">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -105,7 +105,7 @@
             <div class="pt-4 border-t border-brand-gold/10 mt-4">
               <label for="coupon-input" class="block text-xs uppercase tracking-wider font-semibold text-brand-gold mb-2">Apply coupon code</label>
               <div class="flex">
-                <input type="text" id="coupon-input" placeholder="e.g. VASTRAA10" class="bg-brand-cream/50 text-xs px-3 py-2 border border-brand-gold/25 focus:outline-none focus:border-brand-burgundy flex-1 uppercase">
+                <input type="text" id="coupon-input" placeholder="e.g. YAZHAGAM10" class="bg-brand-cream/50 text-xs px-3 py-2 border border-brand-gold/25 focus:outline-none focus:border-brand-burgundy flex-1 uppercase">
                 <button onclick="applyCoupon()" class="bg-brand-burgundy hover:bg-brand-burgundyLight text-white text-xs font-bold px-4 transition duration-300">
                   Apply
                 </button>
@@ -208,14 +208,14 @@
         </div>
         <div class="space-y-2">
           <h3 class="font-serif text-2xl font-bold text-brand-burgundy">Order Placed Successfully!</h3>
-          <p class="text-xs text-gray-500">Thank you for shopping at Vastraa. Your order has been placed and is currently being processed.</p>
+          <p class="text-xs text-gray-500">Thank you for shopping at Yazhagam. Your order has been placed and is currently being processed.</p>
         </div>
         
         <!-- Order info summary details -->
         <div class="bg-brand-cream/40 p-4 border border-brand-gold/15 text-left text-xs space-y-2">
           <div class="flex justify-between">
             <span class="text-gray-500">Order Reference:</span>
-            <span id="order-ref" class="font-bold text-brand-burgundy uppercase">#VAS-18239023</span>
+            <span id="order-ref" class="font-bold text-brand-burgundy uppercase">#YAZH-18239023</span>
           </div>
           <div class="flex justify-between">
             <span class="text-gray-500">Delivery To:</span>
@@ -371,9 +371,9 @@
       const input = document.getElementById("coupon-input").value.trim().toUpperCase();
       const msg = document.getElementById("coupon-message");
       
-      if (input === "VASTRAA10" || input === "TANEIRA10") {
+      if (input === "YAZHAGAM10" || input === "TANEIRA10") {
         couponDiscountRate = 0.10;
-        msg.textContent = "Coupon VASTRAA10 applied! 10% OFF discount granted.";
+        msg.textContent = "Coupon YAZHAGAM10 applied! 10% OFF discount granted.";
         msg.className = "text-[10px] mt-1.5 font-semibold text-green-700";
       } else {
         couponDiscountRate = 0;
@@ -398,7 +398,7 @@
       const finalAmount = checkoutSubtotal + shippingFee - discountAppliedVal;
 
       // Populate success modal info
-      document.getElementById("order-ref").textContent = `#VAS-${Math.floor(10000000 + Math.random() * 90000000)}`;
+      document.getElementById("order-ref").textContent = `#YAZH-${Math.floor(10000000 + Math.random() * 90000000)}`;
       document.getElementById("order-name").textContent = `${firstName} ${lastName}`;
       document.getElementById("order-pay").textContent = payMethod === "cod" ? "Cash on Delivery (COD)" : "Prepaid Online Card/UPI";
       document.getElementById("order-amount").textContent = `₹ ${finalAmount.toLocaleString("en-IN")}`;
@@ -413,7 +413,7 @@
       // Clear cart array in JS memory and localStorage
       if (typeof cart !== "undefined") {
         cart = [];
-        localStorage.setItem("vastraa_cart", JSON.stringify(cart));
+        localStorage.setItem("yazhagam_cart", JSON.stringify(cart));
       }
       
       // Update badging UI
