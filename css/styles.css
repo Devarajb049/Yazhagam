@@ -183,3 +183,42 @@ h6,
 .custom-checkbox:active {
   transform: scale(0.9);
 }
+
+/* Shop The Look Video Cards & Modal Styling */
+.stl-card video {
+  transition: opacity 0.5s ease;
+}
+
+.stl-play-btn {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stl-card:hover .stl-play-btn {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Video player controls overlay */
+.video-controls-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-container:hover .video-controls-overlay {
+  opacity: 1;
+}
+
+/* Smooth zoom transition for video cards */
+.stl-video-zoom {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stl-card:hover .stl-video-zoom {
+  transform: scale(1.04);
+}
+
+/* Megamenu Custom Sizing */
+.w-144 {
+  width: 36rem; /* 576px */
+}

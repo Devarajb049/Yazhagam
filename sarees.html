@@ -301,6 +301,30 @@
         if (checkbox) checkbox.checked = true;
       }
 
+      // Color filter parameter e.g. ?color=Red
+      const colorParam = params.get("color");
+      if (colorParam) {
+        activeFilters.color.push(colorParam);
+        const checkbox = document.querySelector(`input[name="color"][value="${colorParam}"]`);
+        if (checkbox) checkbox.checked = true;
+      }
+
+      // Price Range filter parameter e.g. ?priceRange=under-2000
+      const priceRangeParam = params.get("priceRange");
+      if (priceRangeParam) {
+        activeFilters.priceRange.push(priceRangeParam);
+        const checkbox = document.querySelector(`input[name="priceRange"][value="${priceRangeParam}"]`);
+        if (checkbox) checkbox.checked = true;
+      }
+
+      // Sort parameter e.g. ?sort=rating
+      const sortParam = params.get("sort");
+      if (sortParam) {
+        currentSort = sortParam;
+        const select = document.getElementById("sort-select");
+        if (select) select.value = sortParam;
+      }
+
       // Search parameter e.g. ?search=Kanjivaram
       const searchParam = params.get("search");
       if (searchParam) {

@@ -150,6 +150,9 @@ function injectHeader() {
         <div class="px-6 relative">
           <div class="flex justify-between items-center w-full">
             
+            <!-- HOME LINK -->
+            <a href="index.html" class="text-[10px] uppercase tracking-[0.2em] font-semibold text-brand-charcoal hover:text-brand-burgundy py-3 hover:border-b-2 hover:border-brand-burgundy transition-all duration-200 pb-1">Home</a>
+
             <!-- SAREES MEGAMENU ITEM (Full-Width relative wrapper) -->
             <div class="group py-3">
               <a href="sarees.html" class="text-[10px] uppercase tracking-[0.2em] font-semibold text-brand-charcoal hover:text-brand-burgundy hover:border-b-2 hover:border-brand-burgundy transition-all duration-200 pb-1">Sarees</a>
@@ -392,9 +395,15 @@ function injectHeader() {
               </div>
             </div>
 
+            <!-- WISHLIST LINK -->
+            <a href="wishlist.html" class="text-[10px] uppercase tracking-[0.2em] font-semibold text-brand-charcoal hover:text-brand-burgundy py-3 hover:border-b-2 hover:border-brand-burgundy transition-all duration-200 pb-1">Wishlist</a>
+
+            <!-- SHOPPING BAG LINK -->
+            <a href="cart.html" class="text-[10px] uppercase tracking-[0.2em] font-semibold text-brand-charcoal hover:text-brand-burgundy py-3 hover:border-b-2 hover:border-brand-burgundy transition-all duration-200 pb-1">Shopping Bag</a>
+
             <!-- MORE MEGAMENU ITEM -->
             <div class="group relative py-3">
-              <a href="wishlist.html" class="text-[10px] uppercase tracking-[0.2em] font-semibold text-brand-charcoal hover:text-brand-burgundy hover:border-b-2 hover:border-brand-burgundy transition-all duration-200 pb-1">More</a>
+              <span class="text-[10px] cursor-pointer uppercase tracking-[0.2em] font-semibold text-brand-charcoal hover:text-brand-burgundy pb-1">More</span>
               <div class="absolute right-0 mt-3 w-64 bg-white border border-gray-100 shadow-2xl p-6 hidden group-hover:block z-50 rounded-lg text-left animate-toast">
                 <ul class="space-y-3.5 text-[11px] font-semibold text-brand-charcoal/80">
                   <li><a href="#" class="hover:text-brand-burgundy block transition">Track Order</a></li>
@@ -442,7 +451,7 @@ function injectFooter() {
             <a href="sarees.html?color=Yellow" class="hover:text-brand-burgundy transition">Yellow saree for haldi</a> |
             <a href="sarees.html?weave=Banarasi" class="hover:text-brand-burgundy transition">Banarasi sarees</a>
           </p>
-          <a href="#" class="inline-block text-brand-burgundy font-bold hover:underline">Read More</a>
+          <a href="javascript:void(0)" onclick="openInfoModal('about')" class="inline-block text-brand-burgundy font-bold hover:underline">Read More</a>
         </div>
       </div>
     </div>
@@ -472,17 +481,17 @@ function injectFooter() {
           <div>
             <h4 class="font-serif text-[13px] font-bold text-brand-burgundy uppercase tracking-wider mb-6">Customer Policies</h4>
             <ul class="space-y-3.5 text-xs font-semibold text-brand-charcoal/80">
-              <li><a href="#" class="hover:text-brand-burgundy transition">Return & Exchanges</a></li>
-              <li><a href="#" class="hover:text-brand-burgundy transition">Shipping</a></li>
-              <li><a href="#" class="hover:text-brand-burgundy transition">Cancellation</a></li>
-              <li><a href="#" class="hover:text-brand-burgundy transition">Delivery Information</a></li>
-              <li><a href="#" class="hover:text-brand-burgundy transition">Terms of use</a></li>
-              <li><a href="#" class="hover:text-brand-burgundy transition">Help & FAQS</a></li>
-              <li><a href="#" class="hover:text-brand-burgundy transition">Cyber Security Policy</a></li>
-              <li><a href="#" class="hover:text-brand-burgundy transition">Privacy Notice</a></li>
-              <li><a href="#" class="hover:text-brand-burgundy transition">Cookie Policy</a></li>
-              <li><a href="#" class="hover:text-brand-burgundy transition">Exercise Your Rights</a></li>
-              <li><a href="#" class="hover:text-brand-burgundy transition">Your California Privacy Choices</a></li>
+              <li><a href="javascript:void(0)" onclick="openInfoModal('return')" class="hover:text-brand-burgundy transition">Return & Exchanges</a></li>
+              <li><a href="javascript:void(0)" onclick="openInfoModal('shipping')" class="hover:text-brand-burgundy transition">Shipping</a></li>
+              <li><a href="javascript:void(0)" onclick="openInfoModal('cancellation')" class="hover:text-brand-burgundy transition">Cancellation</a></li>
+              <li><a href="javascript:void(0)" onclick="openInfoModal('delivery')" class="hover:text-brand-burgundy transition">Delivery Information</a></li>
+              <li><a href="javascript:void(0)" onclick="openInfoModal('terms')" class="hover:text-brand-burgundy transition">Terms of use</a></li>
+              <li><a href="javascript:void(0)" onclick="openInfoModal('faqs')" class="hover:text-brand-burgundy transition">Help & FAQS</a></li>
+              <li><a href="javascript:void(0)" onclick="openInfoModal('cyber')" class="hover:text-brand-burgundy transition">Cyber Security Policy</a></li>
+              <li><a href="javascript:void(0)" onclick="openInfoModal('privacy')" class="hover:text-brand-burgundy transition">Privacy Notice</a></li>
+              <li><a href="javascript:void(0)" onclick="openInfoModal('cookie')" class="hover:text-brand-burgundy transition">Cookie Policy</a></li>
+              <li><a href="javascript:void(0)" onclick="openInfoModal('rights')" class="hover:text-brand-burgundy transition">Exercise Your Rights</a></li>
+              <li><a href="javascript:void(0)" onclick="openInfoModal('california')" class="hover:text-brand-burgundy transition">Your California Privacy Choices</a></li>
             </ul>
           </div>
 
@@ -490,13 +499,13 @@ function injectFooter() {
           <div>
             <h4 class="font-serif text-[13px] font-bold text-brand-burgundy uppercase tracking-wider mb-6">About Yazhagam</h4>
             <ul class="space-y-3.5 text-xs font-semibold text-brand-charcoal/80">
-              <li><a href="#" class="hover:text-brand-burgundy transition">About Us</a></li>
-              <li><a href="#" class="hover:text-brand-burgundy transition">Track Order</a></li>
-              <li><a href="#" class="hover:text-brand-burgundy transition">Blogs</a></li>
-              <li><a href="#" class="hover:text-brand-burgundy transition">Corporate</a></li>
-              <li><a href="#" class="hover:text-brand-burgundy transition">Careers</a></li>
-              <li><a href="#" class="hover:text-brand-burgundy transition">Encircle Program</a></li>
-              <li><a href="#" class="hover:text-brand-burgundy transition">Site Map</a></li>
+              <li><a href="javascript:void(0)" onclick="openInfoModal('about')" class="hover:text-brand-burgundy transition">About Us</a></li>
+              <li><a href="javascript:void(0)" onclick="openInfoModal('track')" class="hover:text-brand-burgundy transition">Track Order</a></li>
+              <li><a href="javascript:void(0)" onclick="openInfoModal('blogs')" class="hover:text-brand-burgundy transition">Blogs</a></li>
+              <li><a href="javascript:void(0)" onclick="openInfoModal('corporate')" class="hover:text-brand-burgundy transition">Corporate</a></li>
+              <li><a href="javascript:void(0)" onclick="openInfoModal('careers')" class="hover:text-brand-burgundy transition">Careers</a></li>
+              <li><a href="javascript:void(0)" onclick="openInfoModal('encircle')" class="hover:text-brand-burgundy transition">Encircle Program</a></li>
+              <li><a href="javascript:void(0)" onclick="openInfoModal('sitemap')" class="hover:text-brand-burgundy transition">Site Map</a></li>
             </ul>
           </div>
 
@@ -504,9 +513,9 @@ function injectFooter() {
           <div>
             <h4 class="font-serif text-[13px] font-bold text-brand-burgundy uppercase tracking-wider mb-6">Contact Us</h4>
             <ul class="space-y-3.5 text-xs font-semibold text-brand-charcoal/80 mb-6">
-              <li>1800-266-0123</li>
+              <li><a href="tel:18002660123" class="hover:text-brand-burgundy transition">1800-266-0123</a></li>
               <li><a href="mailto:customercare@yazhagam.co.in" class="hover:text-brand-burgundy transition">customercare@yazhagam.co.in</a></li>
-              <li><a href="#" class="hover:text-brand-burgundy transition font-bold">Store Locator</a></li>
+              <li><a href="javascript:void(0)" onclick="openInfoModal('store')" class="hover:text-brand-burgundy transition font-bold">Store Locator</a></li>
             </ul>
             
             <!-- Social Icons (Burgundy fill matching screenshot) -->
@@ -578,6 +587,7 @@ function injectDrawersAndModals() {
             <!-- Menu Links list (Matching screenshot links) -->
             <div class="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
               <nav class="space-y-4 text-sm font-semibold">
+                <a href="index.html" class="block text-brand-charcoal hover:text-brand-burgundy py-2 border-b border-brand-gold/5">Home</a>
                 <a href="sarees.html" class="block text-brand-charcoal hover:text-brand-burgundy py-2 border-b border-brand-gold/5">Sarees</a>
                 <a href="kurtas.html" class="block text-brand-charcoal hover:text-brand-burgundy py-2 border-b border-brand-gold/5">Kurtas</a>
                 <a href="sarees.html?fabric=Linen" class="block text-brand-charcoal hover:text-brand-burgundy py-2 border-b border-brand-gold/5">Dress Materials</a>
@@ -690,6 +700,56 @@ function injectDrawersAndModals() {
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2" id="quick-view-modal-content">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shop The Look Video Modal -->
+    <div id="stl-video-modal" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+      <div class="flex items-center justify-center min-h-screen p-4 text-center sm:block sm:p-0">
+        <!-- Overlay -->
+        <div id="stl-video-overlay" class="fixed inset-0 bg-brand-charcoal/60 opacity-0 transition-opacity duration-300 ease-out"></div>
+
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+        
+        <!-- Modal panel -->
+        <div id="stl-video-panel" class="inline-block align-middle bg-white text-left shadow-2xl transform scale-95 opacity-0 transition-all duration-300 sm:my-8 sm:max-w-4xl sm:w-full overflow-hidden rounded-lg">
+          
+          <!-- Close button -->
+          <div class="absolute right-4 top-4 z-20">
+            <button id="stl-video-close" type="button" class="text-white md:text-brand-charcoal hover:text-brand-burgundy p-2 bg-brand-burgundy/80 md:bg-white rounded-full md:rounded-none border border-brand-gold/15 shadow-md transition duration-200" aria-label="Close modal">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12" id="stl-video-modal-content">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info/Policy Modal -->
+    <div id="info-modal" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+      <div class="flex items-center justify-center min-h-screen p-4 text-center sm:block sm:p-0">
+        <div id="info-overlay" class="fixed inset-0 bg-brand-charcoal/60 opacity-0 transition-opacity duration-300 ease-out"></div>
+
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+        
+        <div id="info-panel" class="inline-block align-middle bg-white text-left shadow-2xl transform scale-95 opacity-0 transition-all duration-300 sm:my-8 sm:max-w-xl sm:w-full overflow-hidden rounded-lg">
+          <div class="absolute right-4 top-4 z-10">
+            <button id="info-close" type="button" class="text-brand-charcoal hover:text-brand-burgundy p-1.5 bg-brand-cream/30 border border-brand-gold/15 rounded-full" aria-label="Close modal">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="p-8" id="info-modal-content">
             <!-- Dynamically populated via JS -->
           </div>
         </div>
