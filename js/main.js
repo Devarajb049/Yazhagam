@@ -1,4 +1,4 @@
-// Yazhagam E-Commerce Global State & Interactivity Handler
+// Raga Boutique E-Commerce Global State & Interactivity Handler
 
 // Initialize State
 let cart = [];
@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
 // Load state from localStorage
 function loadState() {
   try {
-    const savedCart = localStorage.getItem("yazhagam_cart");
-    const savedWishlist = localStorage.getItem("yazhagam_wishlist");
+    const savedCart = localStorage.getItem("raga_cart");
+    const savedWishlist = localStorage.getItem("raga_wishlist");
     
     if (savedCart) cart = JSON.parse(savedCart);
     if (savedWishlist) wishlist = JSON.parse(savedWishlist);
@@ -26,13 +26,14 @@ function loadState() {
 
 // Save state to localStorage
 function saveCart() {
-  localStorage.setItem("yazhagam_cart", JSON.stringify(cart));
+  localStorage.setItem("raga_cart", JSON.stringify(cart));
   updateCartBadge();
   updateCartUI();
 }
 
+// Save wishlist to localStorage
 function saveWishlist() {
-  localStorage.setItem("yazhagam_wishlist", JSON.stringify(wishlist));
+  localStorage.setItem("raga_wishlist", JSON.stringify(wishlist));
   updateWishlistBadge();
   updateWishlistButtonsState();
 }
@@ -575,7 +576,7 @@ const INFO_DATA = {
   return: {
     title: "Return & Exchanges",
     content: `
-      <p class="mb-4">At Yazhagam, we strive to bring you the highest quality handcrafted fabrics. If you are not fully satisfied with your purchase, we offer a simple <strong>7-day Return and Exchange policy</strong>.</p>
+      <p class="mb-4">At Raga Boutique, we strive to bring you the highest quality handcrafted fabrics. If you are not fully satisfied with your purchase, we offer a simple <strong>7-day Return and Exchange policy</strong>.</p>
       <h4 class="font-bold text-brand-burgundy mb-2 uppercase text-xs tracking-wider">Guidelines:</h4>
       <ul class="list-disc pl-5 mb-4 text-xs space-y-1.5">
         <li>Products must be returned in their original condition, unused, with all brand tags and price labels attached.</li>
@@ -623,10 +624,10 @@ const INFO_DATA = {
   terms: {
     title: "Terms of Use",
     content: `
-      <p class="mb-4">Welcome to Yazhagam. By accessing or using our platform, you agree to comply with and be bound by our website terms and conditions.</p>
+      <p class="mb-4">Welcome to Raga Boutique. By accessing or using our platform, you agree to comply with and be bound by our website terms and conditions.</p>
       <h4 class="font-bold text-brand-burgundy mb-2 uppercase text-xs tracking-wider">Key Terms:</h4>
       <ul class="list-disc pl-5 mb-4 text-xs space-y-1.5">
-        <li><strong>Copyright:</strong> All digital assets, photography, designs, and logo marks are properties of Yazhagam E-commerce.</li>
+        <li><strong>Copyright:</strong> All digital assets, photography, designs, and logo marks are properties of Raga Boutique E-commerce.</li>
         <li><strong>Pricing:</strong> Product prices are subject to change. We ensure pricing accuracy but reserve the right to cancel orders placed with erroneous pricing.</li>
         <li><strong>Usage Limit:</strong> Users may use the platform for personal, non-commercial shopping purposes only.</li>
       </ul>
@@ -635,7 +636,7 @@ const INFO_DATA = {
   faqs: {
     title: "Help & FAQs",
     content: `
-      <p class="mb-4">Find fast answers to common questions about shopping at Yazhagam.</p>
+      <p class="mb-4">Find fast answers to common questions about shopping at Raga Boutique.</p>
       <h4 class="font-bold text-brand-burgundy mb-2 uppercase text-xs tracking-wider">Frequently Asked Questions:</h4>
       <div class="space-y-3 text-xs">
         <div>
@@ -695,7 +696,7 @@ const INFO_DATA = {
         <li>Right to rectification: Request updates to invalid address or contact entries.</li>
         <li>Right to erasure: Request immediate deletion of your user account and details.</li>
       </ul>
-      <p>To exercise any rights, please email us at <a href="mailto:privacy@yazhagam.co.in" class="text-brand-burgundy font-bold hover:underline">privacy@yazhagam.co.in</a>.</p>
+      <p>To exercise any rights, please email us at <a href="mailto:privacy@ragaboutique.co.in" class="text-brand-burgundy font-bold hover:underline">privacy@ragaboutique.co.in</a>.</p>
     `
   },
   california: {
@@ -711,9 +712,9 @@ const INFO_DATA = {
     `
   },
   about: {
-    title: "About Yazhagam",
+    title: "About Raga Boutique",
     content: `
-      <p class="mb-4">Yazhagam represents the fine art of Indian handlooms, showcasing months of hard work and ancestral weaving traditions from all corners of India.</p>
+      <p class="mb-4">Raga Boutique represents the fine art of Indian handlooms, showcasing months of hard work and ancestral weaving traditions from all corners of India.</p>
       <h4 class="font-bold text-brand-burgundy mb-2 uppercase text-xs tracking-wider">Our Heritage:</h4>
       <p class="mb-4">Backed by the legacy of authentic weaves, we partner directly with master weavers to present certified Banarasi jaals, South Kanjivaram silks, linen Jamdanis, and Khadi styles.</p>
       <p>Every purchase directly supports our community of master artisans, keeping the legacy of the handloom alive.</p>
@@ -726,7 +727,7 @@ const INFO_DATA = {
       <div class="bg-brand-cream/30 p-4 border border-brand-gold/15 rounded-md mb-4 text-xs space-y-3">
         <div>
           <label class="block font-bold text-brand-burgundy mb-1">ORDER ID</label>
-          <input type="text" placeholder="e.g., YZ-29384" class="w-full bg-white border border-brand-gold/20 p-2.5 rounded focus:outline-none focus:border-brand-burgundy">
+          <input type="text" placeholder="e.g., RG-29384" class="w-full bg-white border border-brand-gold/20 p-2.5 rounded focus:outline-none focus:border-brand-burgundy">
         </div>
         <div>
           <label class="block font-bold text-brand-burgundy mb-1">MOBILE NUMBER / EMAIL</label>
@@ -737,7 +738,7 @@ const INFO_DATA = {
     `
   },
   blogs: {
-    title: "Yazhagam Blogs & Stories",
+    title: "Raga Boutique Blogs & Stories",
     content: `
       <p class="mb-4">Immerse yourself in our designer guides, fabric history, and style notes.</p>
       <h4 class="font-bold text-brand-burgundy mb-2 uppercase text-xs tracking-wider">Latest Articles:</h4>
@@ -756,14 +757,14 @@ const INFO_DATA = {
   corporate: {
     title: "Corporate Relations",
     content: `
-      <p class="mb-4">Yazhagam is backed by the legacy of Titan Company Limited. For bulk inquiries or partnership proposals, discover more details below.</p>
+      <p class="mb-4">Raga Boutique offers premium handcrafted Indian ethnic wear. For bulk inquiries or partnership proposals, discover more details below.</p>
       <h4 class="font-bold text-brand-burgundy mb-2 uppercase text-xs tracking-wider">Partnerships:</h4>
       <p class="mb-4">We offer custom curation for corporate gifting, wedding favors, and uniform commissions using authentic handloom fabrics.</p>
-      <p>For partnership requests, please email us at <a href="mailto:corporate@yazhagam.co.in" class="text-brand-burgundy font-bold hover:underline">corporate@yazhagam.co.in</a>.</p>
+      <p>For partnership requests, please email us at <a href="mailto:corporate@ragaboutique.co.in" class="text-brand-burgundy font-bold hover:underline">corporate@ragaboutique.co.in</a>.</p>
     `
   },
   careers: {
-    title: "Careers at Yazhagam",
+    title: "Careers at Raga Boutique",
     content: `
       <p class="mb-4">We are constantly seeking creative, dedicated minds to help shape the future of ethical fashion and heritage handlooms.</p>
       <h4 class="font-bold text-brand-burgundy mb-2 uppercase text-xs tracking-wider">Open Roles:</h4>
@@ -772,17 +773,17 @@ const INFO_DATA = {
         <li><strong>Visual Merchandiser</strong> (Location: Chennai)</li>
         <li><strong>Social Media Executive</strong> (Location: Mumbai)</li>
       </ul>
-      <p>Share your portfolio and cover letter with us at <a href="mailto:careers@yazhagam.co.in" class="text-brand-burgundy font-bold hover:underline">careers@yazhagam.co.in</a>.</p>
+      <p>Share your portfolio and cover letter with us at <a href="mailto:careers@ragaboutique.co.in" class="text-brand-burgundy font-bold hover:underline">careers@ragaboutique.co.in</a>.</p>
     `
   },
   encircle: {
-    title: "Titan Encircle Loyalty Program",
+    title: "Raga Gold Club Loyalty Program",
     content: `
-      <p class="mb-4">As part of the Titan family, shopping at Yazhagam unlocks unique rewards across all sister brands.</p>
+      <p class="mb-4">Shopping at Raga Boutique unlocks unique rewards and exclusive benefits.</p>
       <h4 class="font-bold text-brand-burgundy mb-2 uppercase text-xs tracking-wider">Member Benefits:</h4>
       <ul class="list-disc pl-5 mb-4 text-xs space-y-1.5">
-        <li>Earn Encircle points on every purchase at Yazhagam.</li>
-        <li>Redeem accumulated points at Yazhagam, Tanishq, CaratLane, Mia, and Titan Eyeplus.</li>
+        <li>Earn Raga points on every purchase at Raga Boutique.</li>
+        <li>Redeem accumulated points on future purchases at Raga Boutique.</li>
         <li>Get early access to collection launches, sales, and special birthday discounts.</li>
       </ul>
     `
